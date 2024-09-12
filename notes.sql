@@ -57,11 +57,20 @@ SELECT * FROM Customers
 WHERE LastName='Jenkins' AND FirstName='Taylor';
 
 UPDATE Customers 
-SET City='New York', State='NY'
+SET City='New York',
+    State='NY'
 WHERE LastName='Jenkins' AND FirstName='Taylor' AND Address='74 Pine St.';
 
 SELECT * FROM Customers 
 WHERE LastName='Jenkins' AND FirstName='Taylor';
+
+--Remove info from the database (difficulty 2)
+SELECT * FROM Customers
+WHERE FirstName='Norby'
+      OR LastName='Norby'; --determined he is CustomerID 64
+SELECT * FROM Reservations WHERE CustomerID=64; --determined his reservation is ID 2000
+DELETE FROM Reservations WHERE ReservationID=2000;
+SELECT * FROM Reservations WHERE CustomerID=64; --reservation 2000 is gone
 
 -- Create a report showing how many books were published each year (with only one copy of books that there are multiples of),
 -- and the years with the most titles published at the top of the list.
