@@ -45,6 +45,23 @@ INSERT INTO Customers (FirstName, LastName, Email, Address, City, State, Phone, 
 SELECT * FROM Customers
 ORDER BY CustomerID DESC;
 
+--Update a customer's personal info (Difficulty 2)
+SELECT * FROM Customers 
+WHERE LastName='Jenkins' AND FirstName='Taylor' AND Address='27170 6th Ave.';
+
+UPDATE Customers 
+SET Address='74 Pine St.' 
+WHERE LastName='Jenkins' AND FirstName='Taylor' AND Address='27170 6th Ave.';
+
+SELECT * FROM Customers 
+WHERE LastName='Jenkins' AND FirstName='Taylor';
+
+UPDATE Customers 
+SET City='New York', State='NY'
+WHERE LastName='Jenkins' AND FirstName='Taylor' AND Address='74 Pine St.';
+
+SELECT * FROM Customers 
+WHERE LastName='Jenkins' AND FirstName='Taylor';
 
 -- Create a report showing how many books were published each year (with only one copy of books that there are multiples of),
 -- and the years with the most titles published at the top of the list.
