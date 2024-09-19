@@ -72,6 +72,18 @@ SELECT * FROM Reservations WHERE CustomerID=64; --determined his reservation is 
 DELETE FROM Reservations WHERE ReservationID=2000;
 SELECT * FROM Reservations WHERE CustomerID=64; --reservation 2000 is gone
 
+
+--9/19/24 Log customer responses to an invitation (Difficulty 2)
+--First, get the CustomerID from the customer table, using the email
+INSERT INTO rsvps(rsvps_CustomerID, party_size)
+VALUES(
+      (SELECT CustomerID 
+       FROM Customers
+       WHERE Email='atapley2j@kinetecoinc.com'),
+      4);
+
+SELECT * FROM rsvps;
+
 -- Create a report showing how many books were published each year (with only one copy of books that there are multiples of),
 -- and the years with the most titles published at the top of the list.
 -- Create a second report that shows the 5 book titles that have been checked out the most.
