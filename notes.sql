@@ -84,6 +84,8 @@ VALUES(
 
 SELECT * FROM rsvps;
 
+--Look up reservations
+
 -- Create a report showing how many books were published each year (with only one copy of books that there are multiples of),
 -- and the years with the most titles published at the top of the list.
 -- Create a second report that shows the 5 book titles that have been checked out the most.
